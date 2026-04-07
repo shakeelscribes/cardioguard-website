@@ -144,14 +144,14 @@ export default function PredictPage() {
                 <h2 className="font-jakarta text-xl font-bold text-on-surface dark:text-white mb-6">Personal Information</h2>
                 <div className="space-y-5">
                   <SliderField label="Age" value={formData.age} min={18} max={90} unit="years"
-                    onChange={v => update('age', v)} helpText={`${formData.age} years old`} />
+                    onChange={(v: number) => update('age', v)} helpText={`${formData.age} years old`} />
                   <SelectField label="Biological Sex" value={formData.gender}
                     options={[{ label: '♀ Female', value: 0 }, { label: '♂ Male', value: 1 }]}
-                    onChange={v => update('gender', v)} />
+                    onChange={(v: number) => update('gender', v)} />
                   <SliderField label="Height" value={formData.height} min={120} max={220} unit="cm"
-                    onChange={v => update('height', v)} helpText={`${formData.height} cm`} />
+                    onChange={(v: number) => update('height', v)} helpText={`${formData.height} cm`} />
                   <SliderField label="Weight" value={formData.weight} min={30} max={200} unit="kg"
-                    onChange={v => update('weight', v)}
+                    onChange={(v: number) => update('weight', v)}
                     helpText={`${formData.weight} kg • BMI: ${bmi} (${getBMICategory(bmi)})`} />
                 </div>
               </StepPanel>
@@ -164,10 +164,10 @@ export default function PredictPage() {
                 <p className="text-on-surface-variant text-sm mb-6">Enter your most recent blood pressure readings</p>
                 <div className="space-y-5">
                   <SliderField label="Systolic Blood Pressure (Ap Hi)" value={formData.ap_hi} min={60} max={230} unit="mmHg"
-                    onChange={v => update('ap_hi', v)}
+                    onChange={(v: number) => update('ap_hi', v)}
                     helpText={`${formData.ap_hi} mmHg — ${formData.ap_hi < 120 ? '✅ Normal' : formData.ap_hi < 140 ? '⚠️ Elevated' : '🔴 High'}`} />
                   <SliderField label="Diastolic Blood Pressure (Ap Lo)" value={formData.ap_lo} min={40} max={150} unit="mmHg"
-                    onChange={v => update('ap_lo', v)}
+                    onChange={(v: number) => update('ap_lo', v)}
                     helpText={`${formData.ap_lo} mmHg — ${formData.ap_lo < 80 ? '✅ Normal' : formData.ap_lo < 90 ? '⚠️ Elevated' : '🔴 High'}`} />
                   <div className="p-4 rounded-xl bg-primary/5 border border-primary/15">
                     <p className="text-xs text-on-surface-variant">
@@ -190,14 +190,14 @@ export default function PredictPage() {
                       { label: '⚠️ Above Normal (200-239 mg/dL)', value: 2 },
                       { label: '🔴 Well Above Normal (≥ 240 mg/dL)', value: 3 },
                     ]}
-                    onChange={v => update('cholesterol', v)} />
+                    onChange={(v: number) => update('cholesterol', v)} />
                   <SelectField label="Glucose Level" value={formData.gluc}
                     options={[
                       { label: '✅ Normal (< 100 mg/dL)', value: 1 },
                       { label: '⚠️ Above Normal (100-125 mg/dL)', value: 2 },
                       { label: '🔴 Well Above Normal (≥ 126 mg/dL)', value: 3 },
                     ]}
-                    onChange={v => update('gluc', v)} />
+                    onChange={(v: number) => update('gluc', v)} />
                   <div className="p-4 rounded-xl bg-amber-50 dark:bg-amber-900/20 border border-amber-200/50 dark:border-amber-700/30">
                     <p className="text-xs text-amber-800 dark:text-amber-300">
                       ⚠️ If you don't know your exact values, select "Normal" and update after your next blood test.
@@ -220,7 +220,7 @@ export default function PredictPage() {
                   ].map(({ field, label, icon, desc }) => (
                     <ToggleField key={field} label={label} icon={icon} desc={desc}
                       value={formData[field as keyof typeof formData] as number}
-                      onChange={v => update(field, v)} />
+                      onChange={(v: number) => update(field, v)} />
                   ))}
                 </div>
               </StepPanel>
