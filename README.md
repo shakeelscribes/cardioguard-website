@@ -1,5 +1,3 @@
-
-````markdown
 <div align="center">
   
 # 🫀 CardioGuard Web Platform
@@ -65,18 +63,18 @@ Follow these steps to set up the development environment on your local machine.
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/shakeelscribes/cvd-website.git](https://github.com/shakeelscribes/cvd-website.git)
+git clone https://github.com/shakeelscribes/cvd-website.git
 cd cvd-website
-````
+```
 
-### 2\. Install Dependencies
+### 2. Install Dependencies
 
 ```bash
 npm install
 # or 'yarn install' / 'pnpm install'
 ```
 
-### 3\. Configure Environment Variables
+### 3. Configure Environment Variables
 
 Create a `.env.local` file in the root directory. You will need your Supabase project keys and the URL to your deployed FastAPI backend.
 
@@ -86,10 +84,10 @@ NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 
 # ML Backend Connection
-NEXT_PUBLIC_FASTAPI_URL=[https://cardiovascluar-backend.onrender.com](https://cardiovascluar-backend.onrender.com)
+NEXT_PUBLIC_FASTAPI_URL=https://cardiovascluar-backend.onrender.com
 ```
 
-### 4\. Boot the Development Server
+### 4. Boot the Development Server
 
 ```bash
 npm run dev
@@ -97,7 +95,7 @@ npm run dev
 
 Navigate to `http://localhost:3000` in your browser to view the application.
 
------
+---
 
 ## 🌐 Production Deployment
 
@@ -112,7 +110,7 @@ This project is highly optimized for edge deployment via **Vercel**.
 4.  Ensure the **Root Directory** is configured correctly if this Next.js app sits inside a mono-repo subfolder.
 5.  Click **Deploy**. Vercel will handle the CI/CD pipeline automatically.
 
------
+---
 
 ## 👥 The Team
 
@@ -126,7 +124,6 @@ This project is developed and maintained by the following core team members:
 | **Core Developer** | Shabith Subair |
 
 <br>
-&lt;div align=&quot;center&quot;&gt;
-  &lt;i&gt;Engineered for the future of healthcare.&lt;/i&gt;
-&lt;/div&gt;
-```
+<div align="center">
+  <i>Engineered for the future of healthcare.</i>
+</div>
