@@ -1,0 +1,125 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: 'class',
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './lib/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Stitch Design DNA: Clinical Ethereal palette
+        primary: {
+          DEFAULT: '#005dac',
+          container: '#1976D2',
+          fixed: '#d4e3ff',
+          'fixed-dim': '#a5c8ff',
+          on: '#ffffff',
+          'on-fixed': '#001c3a',
+        },
+        secondary: {
+          DEFAULT: '#1b6d24',
+          container: '#a0f399',
+          on: '#ffffff',
+          'on-container': '#217128',
+        },
+        tertiary: {
+          DEFAULT: '#b7181f',
+          container: '#db3534',
+          on: '#ffffff',
+          'on-container': '#fffdff',
+        },
+        surface: {
+          DEFAULT: '#f7f9fb',
+          bright: '#f7f9fb',
+          dim: '#d8dadc',
+          container: '#eceef0',
+          'container-high': '#e6e8ea',
+          'container-highest': '#e0e3e5',
+          'container-low': '#f2f4f6',
+          'container-lowest': '#ffffff',
+          tint: '#005faf',
+          variant: '#e0e3e5',
+        },
+        background: 'var(--background)',
+        'on-background': 'var(--on-surface)',
+        'on-surface': 'var(--on-surface)',
+        'on-surface-variant': 'var(--on-surface-variant)',
+        outline: '#717783',
+        'outline-variant': 'var(--outline-variant)',
+        error: '#ba1a1a',
+        'error-container': '#ffdad6',
+        // Dark mode overrides
+        dark: {
+          background: '#0f1117',
+          surface: '#1a1d24',
+          'surface-container': '#1e2230',
+          card: '#242838',
+          border: '#2a2f45',
+        },
+      },
+      fontFamily: {
+        jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        sans: ['Inter', 'Plus Jakarta Sans', 'sans-serif'],
+      },
+      borderRadius: {
+        xl: '1.5rem',
+        lg: '1rem',
+        '2xl': '2rem',
+        '3xl': '3rem',
+      },
+      backdropBlur: {
+        xs: '4px',
+        sm: '8px',
+        md: '12px',
+        lg: '16px',
+        xl: '20px',
+      },
+      boxShadow: {
+        ambient: '0 10px 40px rgba(25, 28, 30, 0.06)',
+        'ambient-md': '0 20px 60px rgba(25, 28, 30, 0.10)',
+        'ambient-lg': '0 30px 80px rgba(25, 28, 30, 0.14)',
+        glow: '0 0 40px rgba(0, 93, 172, 0.25)',
+        'glow-lg': '0 0 80px rgba(0, 93, 172, 0.35)',
+        card: '0 4px 24px rgba(25, 28, 30, 0.06)',
+      },
+      backgroundImage: {
+        'primary-gradient': 'linear-gradient(135deg, #005dac 0%, #1976D2 100%)',
+        'primary-gradient-soft': 'linear-gradient(135deg, rgba(0,93,172,0.08) 0%, rgba(25,118,210,0.08) 100%)',
+        'hero-gradient': 'linear-gradient(135deg, #005dac 0%, #1976D2 50%, #06B6D4 100%)',
+        'dark-gradient': 'linear-gradient(135deg, #0f1117 0%, #1a1d24 100%)',
+        'card-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(247,249,251,0.9) 100%)',
+        'risk-low': 'linear-gradient(135deg, #1b6d24 0%, #2e7d32 100%)',
+        'risk-high': 'linear-gradient(135deg, #b7181f 0%, #d32f2f 100%)',
+        'risk-medium': 'linear-gradient(135deg, #e65100 0%, #f57c00 100%)',
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'float-slow': 'float 8s ease-in-out infinite',
+        'float-fast': 'float 4s ease-in-out infinite',
+        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+        'gradient-shift': 'gradientShift 8s ease-in-out infinite',
+        'spin-slow': 'spin 20s linear infinite',
+        'counter': 'counter 2s ease-out forwards',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        pulseGlow: {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(0,93,172,0.3)' },
+          '50%': { boxShadow: '0 0 40px rgba(0,93,172,0.6)' },
+        },
+        gradientShift: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+      },
+    },
+  },
+  plugins: [],
+};
